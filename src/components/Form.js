@@ -44,8 +44,8 @@ const speak = () => {
 </div>
   <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
     <h1>Your Text Summary</h1>
-    <p>{text.length>0?text.split(" ").length:0} words,{text.length} characters </p>
-    <p id='readtime'>Total {text.split(" ").length * 0.008} min read time </p>
+    <p>{text.split(/\s+/).filter((element) => { return element.length!=0}).length} words,{text.length} characters </p>
+    <p id='readtime'>Total {text.split(" ").filter((element) => { return element.length!=0}).length* 0.008 } min read time </p>
     <h3>
       Preview
     </h3>
